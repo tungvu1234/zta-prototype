@@ -19,7 +19,7 @@ def calculate_risk_score(context):
     risk = 0.0
 
     if location not in trusted_locations:
-        print("🔸 Untrusted location")
+        print("Untrusted location")
         risk += 0.4
 
     if user_id in known_devices:
@@ -35,5 +35,5 @@ def calculate_risk_score(context):
         risk += 0.3
 
     risk = round(min(risk, 1.0), 2)
-    print(f"✅ Final risk: {risk}")
+    print(f"Final risk: {risk}")
     return risk

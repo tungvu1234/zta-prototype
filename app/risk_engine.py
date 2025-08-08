@@ -24,14 +24,14 @@ def calculate_risk_score(context):
 
     if user_id in known_devices:
         if device_id not in known_devices[user_id]:
-            print("🔸 Unknown device for known user")
+            print("Unknown device for known user")
             risk += 0.3
     else:
-        print("🔸 Unknown user")
+        print("Unknown user")
         risk += 0.3
 
     if behavior == "anomalous":
-        print("🔸 Anomalous behavior")
+        print("Anomalous behavior")
         risk += 0.3
 
     risk = round(min(risk, 1.0), 2)

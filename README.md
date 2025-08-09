@@ -50,3 +50,26 @@ The prototype consists of the following components:
 Install Python dependencies:
 ```bash
 pip install -r requirements.txt
+```
+
+## Usage
+Start OPA Server
+```bash
+opa run --server --watch policies/access.rego
+```
+Run Flask API
+```bash
+python app/main.py
+```
+Send Test Request (Example)
+```json
+POST http://localhost:5000/access
+Content-Type: application/json
+
+{
+  "user_id": "alice",
+  "device_id": "dev1",
+  "location": "Vietnam",
+  "login_behavior": "normal"
+}
+```
